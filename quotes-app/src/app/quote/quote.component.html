@@ -1,6 +1,3 @@
-<p>
-  quote works!
-</p>
 <h1>Quotes</h1>
 <hr>
 <!-- <div class="container">
@@ -18,3 +15,6 @@
   </div>
 
 </div> -->
+<p>{{quote.Quote}}</p>
+<p>Written on {{goal.writtenDate|dateCount}}</p>
+<button class="btn btn-danger" (click)='quoteDelete(true)'>Delete quote </button>
