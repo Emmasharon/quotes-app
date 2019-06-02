@@ -5,17 +5,28 @@
   </h1>
   <img width="300" alt="Quote Logo" src="https://cdn.pixabay.com/photo/2012/04/12/19/48/callout-30368__340.png">
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<form>
+  <div class="form-group">
+    <label for="name">Username</label>
+    <br>
+    <input type="text" required class="form-control" id="name">
+  </div>
+  <br>
+  <div class="form-group">
+    <label for="description">Quote and Author</label>
+    <br>
+    <textarea class="form-control" id="description" rows="4" required></textarea>
+  </div>
+  <br>
+  <div class="form-group">
+    <label for="complete">date submitted</label>
+    <br>
+    <input type='date' id="complete" required>
+  </div>
+  <br>
+  <button type="button" name="button">Submit </button>
+</form>
+</div>
+<app-form></app-form>
 
 <router-outlet></router-outlet>
