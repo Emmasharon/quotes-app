@@ -1,9 +1,10 @@
 <h1>Quotes</h1>
 <hr>
 <div class="container">
-  <div class="row" *ngFor="let quote of quotes;let i = 'index'">
+  <!-- <app-form (quoteDisplay)="addInputs" ($event)></app-form> -->
+  <div class="row" *ngFor="let input of Inputs;let i = 'index'">
     <div class="row">
-      <h4 id="{{i}}" appStrikethrough>{{quote.name}} wriiten on {{quote.writtenDate|date|uppercase}}</h4>
+      <h4 id="{{i}}" appStrikethrough>{{input.name}} wriiten on {{input.writtenDate|date|uppercase}}</h4>
       <button class="btn btn-primary" (click)='toogleDetails(i)'>Toogle Details</button>
     </div>
 
@@ -11,10 +12,9 @@
       <!-- <app-quote [quote]='quote' (isComplete)='deleteQuote($event,i)'>
       </app-quote> -->
     </div>
-
+    <p>{{input.upVote}}</p>
+    <p>Written on {{quote.writtenDate|dateCount}}</p>
+    <button class="btn btn-danger" (click)='quoteDelete(true)'>Delete quote </button>
   </div>
 
 </div>
-<p>{{quote.inputs}}</p>
-<p>Written on {{quote.writtenDate|dateCount}}</p>
-<button class="btn btn-danger" (click)='quoteDelete(true)'>Delete quote </button>
