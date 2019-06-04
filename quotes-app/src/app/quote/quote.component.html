@@ -1,20 +1,26 @@
 <h1>Quotes</h1>
 <hr>
 <div class="container">
-  <!-- <app-form (quoteDisplay)="addInputs" ($event)></app-form> -->
-  <div class="row" *ngFor="let input of Inputs;let i = 'index'">
+  <app-form (quoteDisplay)="addInputs($event)"></app-form>
+  <div class="row" *ngFor="let input of inputs;let i = 'index'">
     <div class="row">
-      <h4 id="{{i}}" appStrikethrough>{{input.name}} wriiten on {{input.writtenDate|date|uppercase}}</h4>
-      <button class="btn btn-primary" (click)='toogleDetails(i)'>Toogle Details</button>
-    </div>
+      <p>"{{ input.description }}"</p>
+      <p> written by: {{ input.name }} </p>
+      <button class="btn btn-primary" (click)='likes(i)'>Like</button>
+      <p>{{input.upVote}}</p>
+      <button class="btn btn-primary" (click)='dislikes(i)'>Dislike</button>
+      <br>
+      <p>{{input.downVote}}</p>
 
-    <div class="row" *ngIf="quote.showDescription">
+      <p>{{input.completeDate}}</p>
+      <!-- <button class="btn btn-danger" (click)='quoteDelete(true)'>Delete quote </button>
+    </div> -->
+
+      <!-- <div class="row" *ngIf="quote.showDescription"> -->
       <!-- <app-quote [quote]='quote' (isComplete)='deleteQuote($event,i)'>
       </app-quote> -->
-    </div>
-    <p>{{input.upVote}}</p>
-    <p>Written on {{quote.writtenDate|dateCount}}</p>
-    <button class="btn btn-danger" (click)='quoteDelete(true)'>Delete quote </button>
-  </div>
+      <!-- </div> -->
 
-</div>
+    </div>
+
+  </div>

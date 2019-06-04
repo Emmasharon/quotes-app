@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Inputs } from '../inputs';
-
+import { DatePipe} from "node_modules/@angular/common"
 @Component({
   selector: 'app-quote',
   templateUrl: './quote.component.html',
@@ -20,10 +20,18 @@ export class QuoteComponent implements OnInit {
 
   ];
 
-  addInputs(event){
-
+  addInputs(input){
+    var ema = this.inputs.length;
+    input.id = ema++;
+    input.completeDate = new Date(input.completeDate);
+    this.inputs.unshift(input);
   }
-
+  likes(i){
+    this.inputs[i].upVote +=1;
+   }
+   dislikes(i){
+     this.inputs[i].downVote +=1;
+   }
   constructor() { }
 
   ngOnInit() {
