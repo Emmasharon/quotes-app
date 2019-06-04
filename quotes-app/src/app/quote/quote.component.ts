@@ -26,12 +26,19 @@ export class QuoteComponent implements OnInit {
     input.completeDate = new Date(input.completeDate);
     this.inputs.unshift(input);
   }
+  quoteDelete(isComplete){
+    let toDelete = confirm (`Are you sure you want to delete this? $ {this.inputs[index].name}`)
+    if (toDelete){
+      this.inputs.splice(index,1);
+    }
+  }
   likes(i){
     this.inputs[i].upVote +=1;
    }
    dislikes(i){
      this.inputs[i].downVote +=1;
    }
+
   constructor() { }
 
   ngOnInit() {

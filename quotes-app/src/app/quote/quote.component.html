@@ -1,9 +1,11 @@
-<h1>Quotes</h1>
 <hr>
 <div class="container">
   <app-form (quoteDisplay)="addInputs($event)"></app-form>
+  <h1>Quotes</h1>
+  <br>
   <div class="row" *ngFor="let input of inputs;let i = 'index'">
     <div class="row">
+
       <p>"{{ input.description }}"</p>
       <p> written by: {{ input.name }} </p>
       <button class="btn btn-primary" (click)='likes(i)'>Like</button>
@@ -11,15 +13,9 @@
       <button class="btn btn-primary" (click)='dislikes(i)'>Dislike</button>
       <br>
       <p>{{input.downVote}}</p>
-
+      <br>
       <p>{{input.completeDate}}</p>
-      <!-- <button class="btn btn-danger" (click)='quoteDelete(true)'>Delete quote </button>
-    </div> -->
-
-      <!-- <div class="row" *ngIf="quote.showDescription"> -->
-      <!-- <app-quote [quote]='quote' (isComplete)='deleteQuote($event,i)'>
-      </app-quote> -->
-      <!-- </div> -->
+      <app-quote-details [inputs]="quote" (isComplete)='quoteDelete($event,i)'></app-quote-details>
 
     </div>
 
