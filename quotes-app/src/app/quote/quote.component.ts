@@ -26,8 +26,8 @@ export class QuoteComponent implements OnInit {
     input.completeDate = new Date(input.completeDate);
     this.inputs.unshift(input);
   }
-  quoteDelete(isComplete){
-    let toDelete = confirm (`Are you sure you want to delete this? $ {this.inputs[index].name}`)
+  quoteDelete(isComplete,index){
+    let toDelete = confirm (`Are you sure you want to delete this? ${this.inputs[index].name}`)
     if (toDelete){
       this.inputs.splice(index,1);
     }
